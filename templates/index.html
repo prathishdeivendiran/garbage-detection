@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Garbage Detection Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>🚮 Garbage Bin Monitoring</h1>
+    <p>Upload a captured video to check if the bin is filled or not.</p>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="video" accept="video/*" required>
+        <br><br>
+        <button type="submit">Analyze Bin</button>
+    </form>
+</body>
+</html>

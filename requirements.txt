@@ -1,0 +1,4 @@
+flask
+ultralytics
+opencv-python
+twilio     # for WhatsApp

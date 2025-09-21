@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detection Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .status {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            color: white;
+            margin-top: 20px;
+        }
+        .filled {
+            background: #d9534f; /* Red */
+        }
+        .not-filled {
+            background: #5cb85c; /* Green */
+        }
+    </style>
+</head>
+<body>
+    <h1>📊 Detection Result</h1>
+    
+    <h2>
+        Bin Status: 
+        <span class="status {% if status == 'Filled' %}filled{% else %}not-filled{% endif %}">
+            {{ status }}
+        </span>
+    </h2>
+
+    <video width="480" controls>
+        <source src="{{ url_for('static', filename='uploads/' + video) }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <br><br>
+    <a href="/">⬅️ Go Back</a>
+</body>
+</html>
