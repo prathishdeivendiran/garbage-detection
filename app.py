@@ -13,11 +13,12 @@ UPLOAD_FOLDER = "static/uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 # WhatsApp setup (Twilio example)
-TWILIO_SID = os.getenv("TWILIO_SID")
-TWILIO_AUTH = os.getenv("TWILIO_AUTH")
-TWILIO_WHATSAPP = "whatsapp:+14155238886"   # Twilio sandbox number
-ADMIN_WHATSAPP = "whatsapp:+91XXXXXXXXXX"   # Replace with your number
-client = Client(TWILIO_SID, TWILIO_AUTH)
+account_sid = os.getenv("TWILIO_ACCOUNT_SID")
+auth_token = os.getenv("TWILIO_AUTH_TOKEN")
+twilio_number = os.getenv("TWILIO_WHATSAPP_NUMBER")
+admin_number = os.getenv("ADMIN_WHATSAPP_NUMBER")
+
+client = Client(account_sid, auth_token)
 
 def send_whatsapp_message(message):
     client.messages.create(
